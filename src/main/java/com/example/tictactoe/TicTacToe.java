@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -68,7 +67,7 @@ public class TicTacToe extends Application {
 
     private void buttonClicked(Button button)
     {
-        if(button.getText().equals("")) // if the button is not marked either "x" or "O"
+        if(button.getText().isEmpty()) // if the button is not marked either "x" or "O"
         {
             if (playerXTurn) {
                 button.setText("X");
@@ -80,7 +79,6 @@ public class TicTacToe extends Application {
             playerXTurn = !playerXTurn;
             checkWinner();
         }
-        return;
     }
 
     private void checkWinner()
